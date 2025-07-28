@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "dist/app.js",
   "scripts": {
-    "start": "nodemon dist/app.js",
-    "dev": "ts-node src/app.ts",
+    "start": "node dist/app.js",
     "build": "tsc",
+    "dev": "ts-node src/app.ts"
     "build:watch": "tsc --watch"
   },
   "dependencies": {
