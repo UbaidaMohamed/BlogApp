@@ -1,24 +1,25 @@
-//? Main entry 
-//! Import necessary modules
 import express from 'express';
 import mongoose from 'mongoose';
 import blogRoutes from './routes/blogRoutes';
+import commentRoutes from './routes/commentRoutes';
 import cors from 'cors';
 
 console.log('Starting the backend server...');
 
-//! Initialize Express application
 const app = express();
+const PORT = process.env.PORT || 3000; // Use Render's PORT
 
-//! Middleware setup
-app.use(cors()); //! Enable CORS for all routes
-app.use(express.json()); //! Parse JSON bodies
-app.use('/api/blogs', blogRoutes); //! Set up routes for blog operations
+app.use(cors());
+app.use(express.json());
 
-//! Connect to MongoDB
-mongoose.connect('mongodb+srv://3bida25mohamed:3bida.25@cluster0.l98wme8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+app.use('/api/blogs', blogRoutes);
+app.use('/api/comments', commentRoutes);
+
+// Use environment variable for MongoDB
+const mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/blogapp';
+
+mongoose.connect(mongoUrl)
   .then(() => console.log('MongoDB connected'))
-  .catch((err: unknown) => console.error(err));
+  .catch((err: unknown) => console.error('MongoDB connection error:', err));
 
-//! Start the server
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
