@@ -1,13 +1,14 @@
 {
   "name": "frontend",
-  "homepage": "https://UbaidaMohamed/github.io/BlogApp/"
+  "homepage": "https://UbaidaMohamed/github.io/BlogApp/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "axios": "^1.10.0",
