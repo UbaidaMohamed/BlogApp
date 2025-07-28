@@ -16,7 +16,7 @@ app.use(express.json()); //! Parse JSON bodies
 app.use('/api/blogs', blogRoutes); //! Set up routes for blog operations
 
 //! Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/blogapp')
+mongoose.connect('mongodb+srv://3bida25mohamed:3bida.25@cluster0.l98wme8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => console.log('MongoDB connected'))
   .catch((err: unknown) => console.error(err));
 
