@@ -1,7 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import blogRoutes from './routes/blogRoutes';
-import commentRoutes from './routes/commentRoutes';
 import cors from 'cors';
 
 console.log('Starting the backend server...');
@@ -13,7 +12,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/blogs', blogRoutes);
-app.use('/api/comments', commentRoutes);
 
 // Use environment variable for MongoDB
 const mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/blogapp';
