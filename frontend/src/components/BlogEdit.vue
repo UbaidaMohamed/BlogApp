@@ -116,7 +116,7 @@ const error = ref("");
 onMounted(async () => {
   try {
     // Use ID from route params to fetch blog data
-    const response = await axios.get(`http://localhost:3000/api/blogs/${route.params.id}`);
+    const response = await axios.get(`https://blogapp-55ku.onrender.com/api/blogs/${route.params.id}`);
     title.value = response.data.title;
     description.value = response.data.description;
   } catch (err: any) {
@@ -130,7 +130,7 @@ onMounted(async () => {
 const updateBlog = async () => {
   submitting.value = true;
   try {
-    await axios.put(`http://localhost:3000/api/blogs/${route.params.id}`, {
+    await axios.put(`https://blogapp-55ku.onrender.com/api/blogs/${route.params.id}`, {
       title: title.value,
       description: description.value,
     });
