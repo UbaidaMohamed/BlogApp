@@ -155,7 +155,7 @@ const createBlog = async () => {
       description: description.value
     });
     
-    const response = await axios.post("http://localhost:3000/api/blogs", {
+    const response = await axios.post("https://blogapp-55ku.onrender.com/api/blogs", {
       title: title.value,
       slug: slug.value,
       description: description.value, // Make sure this matches your backend field
