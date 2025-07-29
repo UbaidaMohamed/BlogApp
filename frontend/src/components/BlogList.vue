@@ -140,7 +140,7 @@ const blogs = ref<Blog[]>([]);
 const router = useRouter();
 
 onMounted(async () => {
-  const res = await axios.get("http://localhost:3000/api/blogs");
+  const res = await axios.get("https://blogapp-55ku.onrender.com/api/blogs");
   blogs.value = res.data;
 });
 
@@ -150,7 +150,7 @@ function editBlog(id: string): void {
 
 async function deleteBlog(id: string): Promise<void> {
   if (confirm('Are you sure you want to delete this blog post?')) {
-    await axios.delete(`http://localhost:3000/api/blogs/${id}`);
+    await axios.delete(`https://blogapp-55ku.onrender.com/api/blogs/${id}`);
     blogs.value = blogs.value.filter((blog: Blog) => blog._id !== id);
   }
 }
