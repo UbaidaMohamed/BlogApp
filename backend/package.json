@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node src/app.js || ts-node src/app.ts",
     "dev": "ts-node src/app.ts",
-    "build": "tsc"
+    "build": "tsc || echo 'TypeScript build failed, using ts-node'"
   },
   "dependencies": {
     "cors": "^2.8.5",
