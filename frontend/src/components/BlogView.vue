@@ -142,7 +142,6 @@ import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import axios from 'axios';
 
-const blogs = ref<Blog[]>([]);
 const route = useRoute();
 
 //! Blog data interface
