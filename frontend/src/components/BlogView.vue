@@ -174,8 +174,8 @@ const error = ref('');
 
 async function deleteBlog(id: string): Promise<void> {
   if (confirm('Are you sure you want to delete this blog post?')) {
-    await axios.delete(`http://localhost:3000/api/blogs/${id}`);
-    const response = await axios.get(`http://localhost:3000/api/blogs/slug/${route.params.slug}`);
+    await axios.delete(`https://blogapp-55ku.onrender.com/api/blogs/${id}`);
+    const response = await axios.get(`https://blogapp-55ku.onrender.com/api/blogs/slug/${route.params.slug}`);
     blog.value = response.data;
   }
 }
@@ -183,7 +183,7 @@ async function deleteBlog(id: string): Promise<void> {
 //! Fetch blog data on mount
 onMounted(async () => {
   try {
-    const response = await axios.get(`http://localhost:3000/api/blogs/slug/${route.params.slug}`);
+    const response = await axios.get(`https://blogapp-55ku.onrender.com/api/blogs/slug/${route.params.slug}`);
     blog.value = response.data;
   } catch (err) {
     error.value = 'Blog not found';
